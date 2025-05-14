@@ -1,0 +1,1 @@
+INSERT INTO NOTE (TITLE, CONTENT) VALUES ('Ejemplo', 'Contenido de ejemplo');
