@@ -1,0 +1,23 @@
+version: "3.8"  # versión recomendada para compatibilidad con Docker Engine 19.03.0+ :contentReference[oaicite:0]{index=0}
+services:
+  backend:
+    build: ./backend             # Dockerfile en notes-app/backend
+    ports:
+      - "8080:8080"              # expone el API de Spring Boot
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+    networks:
+      - notes-net
+
+  frontend:
+    build: ./frontend            # Dockerfile en notes-app/frontend
+    ports:
+      - "3000:3000"              # expone la app React
+    depends_on:
+      - backend                  # espera a que el backend esté disponible
+    networks:
+      - notes-net
+
+networks:
+  notes-net:                      # red interna para comunicar frontend y backend
+    driver: bridge
