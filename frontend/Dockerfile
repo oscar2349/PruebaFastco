@@ -1,5 +1,5 @@
 FROM node:18-alpine AS build
-WORKDIR /app
+WORKDIR /frontend
 
 # 1) Copia sólo package*.json e instala
 COPY package.json package-lock.json* ./
@@ -11,6 +11,6 @@ RUN npm run build
 
 # Etapa final: servidor ligero
 FROM nginx:stable-alpine
-COPY --from=build /app/build /usr/share/nginx/html
+COPY --from=build /frontend/build /usr/share/nginx/html
 EXPOSE 3000
 CMD ["nginx", "-g", "daemon off;"]

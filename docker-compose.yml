@@ -12,7 +12,7 @@ services:
   frontend:
     build: ./frontend            # Dockerfile en notes-app/frontend
     ports:
-      - "3000:3000"              # expone la app React
+      - "3000:80"              # expone la app React
     depends_on:
       - backend                  # espera a que el backend esté disponible
     networks:
