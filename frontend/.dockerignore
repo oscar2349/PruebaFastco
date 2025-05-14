@@ -1,0 +1,14 @@
+# Excluir dependencias locales
+node_modules
+npm-debug.log
+yarn-error.log
+
+# Excluir IDEs y sistemas de archivos
+.git
+.gitignore
+.vscode
+.DS_Store
+Thumbs.db
+
+# Excluir metadata de OneDrive
+~$*

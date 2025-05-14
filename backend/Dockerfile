@@ -7,4 +7,4 @@ RUN ./mvnw dependency:go-offline -B
 COPY src src
 RUN ./mvnw package -DskipTests -B
 EXPOSE 8080
-CMD ["java","-jar","target/notes-backend-0.0.1-SNAPSHOT.jar"]
+CMD ["java","-jar","target/demo-0.0.1-SNAPSHOT.jar"]
